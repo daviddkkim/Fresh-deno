@@ -9,8 +9,10 @@ interface CounterProps {
 }
 
 export default function Text() {
-  const initText = localStorage.getItem("fresh_text")
+  const initText = localStorage
     ? localStorage.getItem("fresh_text")
+      ? localStorage.getItem("fresh_text")
+      : ""
     : "";
   const [text, setText] = useState(initText);
 
@@ -34,7 +36,7 @@ export default function Text() {
         handleTextChange(e);
       }}
       ref={ref}
-      placeholder={'Just Write...'}
+      placeholder={"Just Write..."}
     >
       {text}
     </textarea>
