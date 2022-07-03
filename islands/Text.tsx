@@ -9,20 +9,17 @@ interface CounterProps {
 }
 
 export default function Text() {
-  const initText = localStorage
+  const initText =
+    /* localStorage
     ? localStorage.getItem("fresh_text")
       ? localStorage.getItem("fresh_text")
       : ""
-    : "";
+    : ""; */ "";
   const [text, setText] = useState(initText);
 
   const handleTextChange = (e) => {
     setText(e.target.value);
   };
-
-  useEffect(() => {
-    localStorage.setItem("fresh_text", text);
-  }, [text]);
 
   const ref = createRef();
   useEffect(() => {
